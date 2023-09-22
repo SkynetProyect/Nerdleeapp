@@ -19,7 +19,7 @@ class Nerdle:
         self.correo_jugador = correo_jugador
         return self.correo_jugador
 
-    @staticmethod
+
     def iniciar_juego(self):
         filas: int = 6
         columnas: int = 8
