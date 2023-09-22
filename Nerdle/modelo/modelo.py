@@ -27,3 +27,4 @@ class Nerdle:
             print(" | ".join(fila))
             print("-" * 31)
         return tablero
+
