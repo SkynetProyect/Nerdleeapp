@@ -1,3 +1,4 @@
+import subprocess
 import tkinter as tk
 
 ventana = tk.Tk()
@@ -126,6 +127,19 @@ boton_ingresar = tk.Button(contenedor_tablero, text="Ingresar", width=10, height
 fila_boton_ingresar = filas + 2
 columna_boton_ingresar = 4 % columnas
 boton_ingresar.grid(row=fila_boton_ingresar, column=columna_boton_ingresar, padx=2, pady=2)
+
+
+# Función para abrir el otro programa
+def abrir_intrucciones():
+    try:
+        subprocess.Popen(["python", "ui.intrucciones.py"])
+    except FileNotFoundError:
+        print("El archivo del otro programa no se encuentra.")
+
+
+boton_intrucciones = tk.Button(ventana, text=" Ver instrucciones", command=abrir_intrucciones)
+boton_intrucciones.pack()
+
 
 ventana.mainloop()
 
