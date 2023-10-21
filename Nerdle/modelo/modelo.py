@@ -1,4 +1,6 @@
 from dataclasses import dataclass
+from Nerdle.modelo.claseEcuacion import Ecuacion
+
 
 @dataclass
 class Jugador:
@@ -6,8 +8,9 @@ class Jugador:
     correo_jugador: str = ""
 
 
-class Nerdle:
+class Nerdle(Ecuacion):
     def __init__(self):
+        super().__init__()
         self.nombre_jugador: str = ""
         self.correo_jugador: str = ""
 
@@ -19,12 +22,20 @@ class Nerdle:
         self.correo_jugador = correo_jugador
         return self.correo_jugador
 
-    def iniciar_juego(self):
-        filas: int = 6
-        columnas: int = 8
-        tablero = [[" " for _ in range(columnas)] for _ in range(filas)]
-        for fila in tablero:
-            print(" | ".join(fila))
-            print("-" * 31)
-        return tablero
+    """ Se borra el metodo juego nuevo pues no necesitamos mostrar la tabla por consola"""
+
+    """
+    El metodo iniciar nuevo juego es el que debe ser llamado cuando el jugador de click en jugar, este genera y retorna
+    la ecuacion, y a su vez la imprime en consola
+    """
+
+    def iniciar_nuevo_juego(self):
+        print(f"{'_':_^30}")
+        titulo = "COMIENZA A JUGAR: "
+        print(f"\n{titulo.center(30)}")
+        print(f"La ecuacion generada es: = {super().generar_ecuacion()}")
+
+
+N = Nerdle()
+N.iniciar_nuevo_juego()
 
