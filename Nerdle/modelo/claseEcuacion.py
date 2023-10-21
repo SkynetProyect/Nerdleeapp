@@ -108,4 +108,9 @@ class Ecuacion:
             self.ecuacion.append(str(confirmar_logica)[0])
             self.ecuacion.append(str(confirmar_logica)[1])
 
+        #agrege el bucle for abajo porque algunos datos en la lista eran INT, y necesitaba que todos fueran STR
+
+        for i in range(len(self.ecuacion)):
+            self.ecuacion[i] = str(self.ecuacion[i])
+
         return self.ecuacion
