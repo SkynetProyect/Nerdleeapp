@@ -15,7 +15,7 @@ class Retroalimentacion:
             elif ingreso[i] in self.ecuacion_actual:
                 if self.ecuacion_actual[i] != ingreso[i]:
                     lista_retorno[i] = "#FFFF00"
-                if self.ecuacion_actual[i] == ingreso[i]:
+                elif self.ecuacion_actual[i] == ingreso[i]:
                     lista_retorno[i] = "#008000"
 
         print(f"lista retornada {lista_retorno}")
