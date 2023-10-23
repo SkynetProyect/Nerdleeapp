@@ -67,9 +67,9 @@ class Nerdle(Ecuacion):
             self.estadisticas.numeros[5] += 1
         else:
             self.estadisticas.numeros[6] += 1
-        pass  # falta implementar
 
     def anunciar_perdedor(self):
+
         self.estadisticas.numeros[0] += 1
         return self.retroalimentacion.ecuacion_actual
 
@@ -93,6 +93,3 @@ class Nerdle(Ecuacion):
                     self.anunciar_ganador()
                     return True
 
-
-N = Nerdle()
-N.iniciar_nuevo_juego()
